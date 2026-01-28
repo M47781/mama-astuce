@@ -19,14 +19,13 @@ const OrderForm: React.FC = () => {
     setLoading(true);
 
     try {
-      // 1. محاولة إرسال البيانات إلى Google Sheet (اختياري)
-      // ملاحظة: إذا كان الرابط لا يعمل، الكود سينتقل مباشرة لفتح واتساب
+      // 1. إرسال البيانات إلى Google Sheet (الرابط الجديد)
       try {
         await fetch(
-          'https://script.google.com/macros/s/AKfycbzgUBFX7ZeW2wtf64F3lDs8SKkJb5oiw08NkCx_0Ad65r7Z-cTOJuwALvTygjvThplVJA/exec',
+          'https://script.google.com/macros/s/AKfycbzJq-iSoxcpVOgXCe_cjmJyWuUOkGXUuydwZ9mAgdCDY0kMBouuNOB0WbAl-KGrPcxgKw/exec',
           {
             method: 'POST',
-            mode: 'no-cors', // لتجنب مشاكل الـ CORS في المتصفح
+            mode: 'no-cors', 
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData),
           }
@@ -43,7 +42,6 @@ const OrderForm: React.FC = () => {
 العنوان: ${formData.address}
 الحجم: ${formData.productSize}`;
 
-      // الرقم الجديد بعد التنسيق الدولي
       const phoneNumber = "213772136223"; 
       
       window.open(
