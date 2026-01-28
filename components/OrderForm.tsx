@@ -18,15 +18,17 @@ const OrderForm: React.FC = () => {
     e.preventDefault();
     setLoading(true);
 
-    // الرابط الجديد الذي أرسلته
-    const googleSheetUrl = 'https://script.google.com/macros/s/AKfycbzsHqCrEymMQB5ZVkUFV49Y-p_RCAtXNbcyfZMGF-es88QQsiDqfJFSKbV6sKkhoz4e_A/exec';
+    // رابطك الجديد النهائي
+    const googleSheetUrl = 'https://script.google.com/macros/s/AKfycbzXkaS5jG0mKLsJTZXbo5JGZjlrddDI9z_i4ygvr2LCRCAVyG5oXRTfKwwS8jYydVDGQg/exec';
 
     try {
-      // 1. إرسال البيانات إلى Google Sheet
+      // 1. إرسال البيانات إلى Google Sheet بطريقة تضمن تجاوز الحماية
       await fetch(googleSheetUrl, {
         method: 'POST',
-        mode: 'no-cors', 
-        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors', // ضروري جداً لتجاوز قيود CORS
+        headers: {
+          'Content-Type': 'text/plain', // استخدام text/plain يجعل جوجل يقبل الطلب بسهولة
+        },
         body: JSON.stringify(formData),
       });
 
@@ -47,6 +49,7 @@ const OrderForm: React.FC = () => {
 
       setSubmitted(true);
     } catch (error) {
+      console.error("Error submitting form:", error);
       alert('حدث خطأ أثناء معالجة الطلب، يرجى المحاولة مرة أخرى.');
     }
 
@@ -61,11 +64,11 @@ const OrderForm: React.FC = () => {
   if (submitted) {
     return (
       <section id="order" className="py-20 bg-white" dir="rtl">
-        <div className="max-w-xl mx-auto px-4">
-          <div className="bg-emerald-50 border-2 border-emerald-100 rounded-3xl p-12 text-center shadow-xl">
+        <div className="max-w-xl mx-auto px-4 text-center">
+          <div className="bg-emerald-50 border-2 border-emerald-100 rounded-3xl p-12 shadow-xl">
             <CheckCircle className="text-emerald-600 w-16 h-16 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">تم استلام طلبك بنجاح!</h2>
-            <p className="text-lg text-gray-600">سيتم التواصل معك هاتفياً خلال الـ 24 ساعة القادمة لتأكيد الطلب.</p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">تم استلام طلبك!</h2>
+            <p className="text-lg text-gray-600">شكراً لك، سيتم مراجعة طلبك في جدول البيانات والتواصل معك عبر واتساب.</p>
             <button onClick={resetForm} className="mt-8 text-emerald-600 font-bold hover:underline">تقديم طلب آخر</button>
           </div>
         </div>
@@ -74,26 +77,28 @@ const OrderForm: React.FC = () => {
   }
 
   return (
-    <section id="order" className="py-20 bg-white text-right" dir="rtl">
+    <section id="order" className="py-20 bg-white" dir="rtl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-8 text-right order-2 lg:order-1">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-4">اطلب الآن</h2>
-            <p className="text-lg text-gray-600">يرجى ملء المعلومات التالية لتأكيد طلبك وتجربة قوة الطبيعة.</p>
+            <p className="text-lg text-gray-600">املأ المعلومات وسيتم تسجيلها في النظام فوراً.</p>
             <div className="bg-gray-50 p-8 rounded-3xl space-y-6">
-              {[ {t: 'أدخل بياناتك الشخصية', n: '1'}, {t: 'اختر حجم العبوة المناسب', n: '2'}, {t: 'تواصل معنا عبر واتساب للتأكيد', n: '3'} ].map((item) => (
-                <div key={item.n} className="flex gap-4 items-center justify-end">
-                  <p className="font-bold text-gray-900">{item.t}</p>
-                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold">{item.n}</div>
-                </div>
-              ))}
+               <div className="flex gap-4 items-center justify-end font-bold text-gray-900">
+                  <p>أدخل بياناتك الشخصية</p>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">1</div>
+               </div>
+               <div className="flex gap-4 items-center justify-end font-bold text-gray-900">
+                  <p>اختر حجم العبوة</p>
+                  <div className="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center">2</div>
+               </div>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100 space-y-6 order-1 lg:order-2">
+          <form onSubmit={handleSubmit} className="bg-white p-8 md:p-10 rounded-3xl shadow-2xl border border-gray-100 space-y-6 text-right order-1 lg:order-2">
             <div>
-              <label className="block text-gray-700 font-bold mb-2 text-right">الاسم الكامل</label>
-              <input required type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500"
+              <label className="block text-gray-700 font-bold mb-2">الاسم الكامل</label>
+              <input required type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500 transition-all"
                 value={formData.fullName} onChange={(e) => setFormData({ ...formData, fullName: e.target.value })} />
             </div>
 
@@ -104,26 +109,20 @@ const OrderForm: React.FC = () => {
                   value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} />
               </div>
               <div>
-                <label className="block text-gray-700 font-bold mb-2 text-right">الولاية</label>
-                <select required className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500"
-                  value={formData.state} onChange={(e) => setFormData({ ...formData, state: e.target.value })}>
-                  <option value="">اختر الولاية</option>
-                  <option value="الجزائر">الجزائر</option>
-                  <option value="وهران">وهران</option>
-                  <option value="سطيف">سطيف</option>
-                  <option value="أخرى">ولاية أخرى...</option>
-                </select>
+                <label className="block text-gray-700 font-bold mb-2">الولاية</label>
+                <input required type="text" className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500"
+                  value={formData.state} onChange={(e) => setFormData({ ...formData, state: e.target.value })} />
               </div>
             </div>
 
             <div>
-              <label className="block text-gray-700 font-bold mb-2 text-right">العنوان الكامل</label>
+              <label className="block text-gray-700 font-bold mb-2">العنوان الكامل</label>
               <textarea required rows={2} className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-500"
                 value={formData.address} onChange={(e) => setFormData({ ...formData, address: e.target.value })} />
             </div>
 
             <div>
-              <label className="block text-gray-700 font-bold mb-4 text-right">اختر الحجم</label>
+              <label className="block text-gray-700 font-bold mb-4">اختر الحجم</label>
               <div className="grid grid-cols-2 gap-4">
                 {productSizes.map((size) => (
                   <button key={size} type="button" onClick={() => setFormData({ ...formData, productSize: size })}
