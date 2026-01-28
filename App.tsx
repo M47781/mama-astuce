@@ -6,7 +6,7 @@ import Usage from "./components/Usage";
 import Pricing from "./components/Pricing";
 import OrderForm from "./components/OrderForm";
 import FAQ from "./components/FAQ";
-import ChatAssistant from "./components/ChatAssistant";
+// تم حذف ChatAssistant من هنا
 import { Instagram, Facebook, Mail, ShieldAlert, ChevronLeft, ChevronRight, X } from "lucide-react";
 
 const App: React.FC = () => {
@@ -51,7 +51,7 @@ const App: React.FC = () => {
         <Hero />
         <Features />
 
-        {/* Real Photos Section - Small Carousel Centered */}
+        {/* Real Photos Section */}
         <section className="py-16 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">صور حقيقية للمنتج</h2>
@@ -119,13 +119,11 @@ const App: React.FC = () => {
           <div className="grid md:grid-cols-4 gap-12 mb-12 border-b border-emerald-900 pb-12">
             <div className="col-span-1 md:col-span-2 space-y-6">
               <div className="flex items-center gap-2">
-               
-                  <img
-          src="https://res.cloudinary.com/dv664dogt/image/upload/v1769434470/image_2026-01-26_143151971_1_t9knhy.png"
-          alt="MAMA Astuce Logo"
-          className="w-20 h-18 object-contain"
-        />
-                
+                <img
+                  src="https://res.cloudinary.com/dv664dogt/image/upload/v1769434470/image_2026-01-26_143151971_1_t9knhy.png"
+                  alt="MAMA Astuce Logo"
+                  className="w-20 h-18 object-contain"
+                />
                 <span className="text-2xl font-bold">MAMA Astuce</span>
               </div>
               <p className="text-emerald-100/70 max-w-sm leading-relaxed">
@@ -177,9 +175,6 @@ const App: React.FC = () => {
           </div>
         </div>
       </footer>
-
-      {/* AI Assistant Button & Widget */}
-      <ChatAssistant />
 
       {/* Sticky Bottom Bar for Mobile */}
       <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 border-t border-emerald-100 z-40 flex gap-4">
