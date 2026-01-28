@@ -19,10 +19,10 @@ const OrderForm: React.FC = () => {
     setLoading(true);
 
     try {
-      // 1. إرسال البيانات إلى Google Sheet (الرابط الجديد)
+      // 1. إرسال البيانات إلى Google Sheet (الرابط الجديد الذي وضعته الآن)
       try {
         await fetch(
-          'https://script.google.com/macros/s/AKfycbzJq-iSoxcpVOgXCe_cjmJyWuUOkGXUuydwZ9mAgdCDY0kMBouuNOB0WbAl-KGrPcxgKw/exec',
+          'https://script.google.com/macros/s/AKfycbywzL0-M7u327GhtU42uQjL6PfpHrlckvpPRj_NAVgCIE7Y8FLM7ksHonUy_lRVf6XT/exec',
           {
             method: 'POST',
             mode: 'no-cors', 
@@ -30,11 +30,11 @@ const OrderForm: React.FC = () => {
             body: JSON.stringify(formData),
           }
         );
-      } catch (e) {
+      } catch (err) {
         console.log("Sheet error - proceeding to WhatsApp");
       }
 
-      // 2. فتح WhatsApp مع الرسالة الجاهزة (الرقم الجديد: 0772136223)
+      // 2. فتح WhatsApp مع الرسالة الجاهزة (الرقم: 0772136223)
       const message = `طلب جديد لمنتج MAMA Astuce:
 الاسم: ${formData.fullName}
 الهاتف: ${formData.phone}
