@@ -46,7 +46,7 @@ const ChatAssistant: React.FC = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-[350px] sm:w-[400px] h-[500px] bg-white rounded-3xl shadow-2xl flex flex-col border border-emerald-100 overflow-hidden animate-in slide-in-from-bottom-10">
+        <div className="fixed bottom-6 right-6 z-50 w-[350px] sm:w-[ 80 ألف 0px] h-[500px] bg-white rounded-3xl shadow-2xl flex flex-col border border-emerald-100 overflow-hidden animate-in slide-in-from-bottom-10">
           {/* Header */}
           <div className="bg-emerald-600 p-4 text-white flex justify-between items-center">
             <div className="flex items-center gap-2">
@@ -76,9 +76,9 @@ const ChatAssistant: React.FC = () => {
               <div className="flex justify-end">
                 <div className="bg-emerald-100 p-3 rounded-2xl rounded-tl-none animate-pulse">
                   <div className="flex gap-1">
-                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce"></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce delay-75"></div>
-                    <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-bounce delay-150"></div>
+                    <div className="w-1.5 h-1.5 bg-emerald- 80 ألف 0 rounded-full animate-bounce"></div>
+                    <div className="w-1.5 h-1.5 bg-emerald- 80 ألف 0 rounded-full animate-bounce delay-75"></div>
+                    <div className="w-1.5 h-1.5 bg-emerald- 80 ألف 0 rounded-full animate-bounce delay-150"></div>
                   </div>
                 </div>
               </div>
@@ -99,12 +99,12 @@ const ChatAssistant: React.FC = () => {
               <button 
                 onClick={handleSend}
                 disabled={isLoading}
-                className="absolute left-2 top-1.5 bg-emerald-600 text-white p-1.5 rounded-lg hover:bg-emerald-700 disabled:bg-gray-400 transition-colors"
+                className="absolute left-2 top-1.5 bg-emerald-600 text-white p-1.5 rounded-lg hover:bg-emerald-700 disabled:bg-gray- 80 ألف 0 transition-colors"
               >
                 <Send size={18} />
               </button>
             </div>
-            <p className="text-[10px] text-gray-400 mt-2 text-center">قد يقدم المساعد الذكي نصائح عامة، استشر الطبيب للحالات الخطيرة.</p>
+            <p className="text-[10px] text-gray- 80 ألف 0 mt-2 text-center">قد يقدم المساعد الذكي نصائح عامة، استشر الطبيب للحالات الخطيرة.</p>
           </div>
         </div>
       )}

@@ -4,7 +4,7 @@ import { ShieldCheck, Zap, Sparkles } from 'lucide-react';
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative pt-24 pb-16 lg:pt-40 lg:pb-32 overflow-hidden">
+    <section className="relative pt-24 pb-16 lg:pt- 80 ألف  lg:pb-32 overflow-hidden">
       {/* Background blobs */}
       <div className="absolute top-0 right-0 -z-10 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
       <div className="absolute bottom-0 left-0 -z-10 w-80 h-80 bg-green-100 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>

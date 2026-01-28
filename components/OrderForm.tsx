@@ -1,7 +1,7 @@
 import React from 'react';
 import { Send, CheckCircle, MapPin, Phone, User, Package } from 'lucide-react';
 
-const productSizes = ['500mg', '1g'];
+const productSizes = ['50g', '100g'];
 
 // قائمة الولايات الجزائرية
 const algerianWilayas = [
@@ -12,7 +12,7 @@ const algerianWilayas = [
   "21 - سكيكدة", "22 - سيدي بلعباس", "23 - عنابة", "24 - قالمة", "25 - قسنطينة", 
   "26 - المدية", "27 - مستغانم", "28 - المسيلة", "29 - معسكر", "30 - ورقلة", 
   "31 - وهران", "32 - البيض", "33 - إليزي", "34 - برج بوعريريج", "35 - بومرداس", 
-  "36 - الطارف", "37 - تندوف", "38 - تسمسيلت", "39 - الوادي", "40 - خنشلة", 
+  "36 - الطارف", "37 - تندوف", "38 - تسمسيلت", "39 - الوادي", " 80 ألف  - خنشلة", 
   "41 - سوق أهراس", "42 - تيبازة", "43 - ميلة", "44 - عين الدفلى", "45 - النعامة", 
   "46 - عين تموشنت", "47 - غرداية", "48 - غليزان", "49 - تيميمون", "50 - برج باجي مختار", 
   "51 - أولاد جلال", "52 - بني عباس", "53 - عين صالح", "54 - عين قزام", "55 - تقرت", 
@@ -27,14 +27,14 @@ const OrderForm: React.FC = () => {
     phone: '',
     state: '',
     address: '',
-    productSize: '500mg',
+    productSize: '50g',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const sheetBestUrl = 'https://api.sheetbest.com/sheets/c8564913-f657-408f-9f0b-72f86891aec2';
+    const sheetBestUrl = 'https://api.sheetbest.com/sheets/c8564913-f657- 80 ألف 8f-9f0b-72f86891aec2';
 
     try {
       // 1. إرسال البيانات إلى SheetBest

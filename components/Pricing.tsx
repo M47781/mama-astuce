@@ -5,15 +5,15 @@ import { Tag, Truck, CreditCard } from 'lucide-react';
 const Pricing: React.FC = () => {
   const plans = [
     {
-      size: "500mg",
-      price: "40,000 دج",
+      size: "50g",
+      price: " 80 ألف ,000 دج",
       tag: "الأكثر طلباً",
       popular: true,
       features: ["مناسب للحروق البسيطة", "حجم مثالي للجيب", "توصيل سريع", "دفع عند الاستلام"]
     },
     {
-      size: "1g",
-      price: "120,000 دج",
+      size: "100g",
+      price: "160 ألف ,000 دج",
       tag: "قيمة أفضل",
       popular: false,
       features: ["توفير أكبر", "للاستخدام المتكرر", "توصيل سريع لكل الولايات", "دفع عند الاستلام"]
@@ -59,14 +59,14 @@ const Pricing: React.FC = () => {
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <div className="bg-emerald-800/50 p-6 rounded-2xl flex items-center gap-4 text-white">
-            <Truck className="text-emerald-400 w-10 h-10" />
+            <Truck className="text-emerald- 80 ألف 0 w-10 h-10" />
             <div className="text-right">
               <p className="font-bold">توصيل متوفر</p>
               <p className="text-emerald-200 text-sm">لكافة ولايات الجزائر</p>
             </div>
           </div>
           <div className="bg-emerald-800/50 p-6 rounded-2xl flex items-center gap-4 text-white">
-            <CreditCard className="text-emerald-400 w-10 h-10" />
+            <CreditCard className="text-emerald- 80 ألف 0 w-10 h-10" />
             <div className="text-right">
               <p className="font-bold">دفع عند الاستلام</p>
               <p className="text-emerald-200 text-sm">ادفع فقط عند استلام منتجك</p>

@@ -62,7 +62,7 @@ const App: React.FC = () => {
             {images.map((img, i) => (
               <div
                 key={i}
-                className="min-w-[100px] md:min-w-[140px] aspect-[4/5] bg-gray-100 rounded-2xl shadow-md overflow-hidden flex-shrink-0 cursor-pointer"
+                className="min-w-[100px] md:min-w-[1 80 ألف px] aspect-[4/5] bg-gray-100 rounded-2xl shadow-md overflow-hidden flex-shrink-0 cursor-pointer"
                 onClick={() => setSelectedImageIndex(i)}
               >
                 <img
@@ -145,10 +145,10 @@ const App: React.FC = () => {
             <div>
               <h4 className="font-bold text-lg mb-6">روابط سريعة</h4>
               <ul className="space-y-4 text-emerald-100/70">
-                <li><a href="#features" className="hover:text-emerald-400">مميزاتنا</a></li>
-                <li><a href="#usage" className="hover:text-emerald-400">طريقة الاستعمال</a></li>
-                <li><a href="#pricing" className="hover:text-emerald-400">الأسعار والعبوات</a></li>
-                <li><a href="#order" className="hover:text-emerald-400">طلب المنتج</a></li>
+                <li><a href="#features" className="hover:text-emerald- 80 ألف 0">مميزاتنا</a></li>
+                <li><a href="#usage" className="hover:text-emerald- 80 ألف 0">طريقة الاستعمال</a></li>
+                <li><a href="#pricing" className="hover:text-emerald- 80 ألف 0">الأسعار والعبوات</a></li>
+                <li><a href="#order" className="hover:text-emerald- 80 ألف 0">طلب المنتج</a></li>
               </ul>
             </div>
 
@@ -163,13 +163,13 @@ const App: React.FC = () => {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3 bg-emerald-900/40 p-3 rounded-xl border border-emerald-800">
-              <ShieldAlert className="text-orange-400 flex-shrink-0" size={20} />
+            <div className="flex items-center gap-3 bg-emerald-900/ 80 ألف  p-3 rounded-xl border border-emerald-800">
+              <ShieldAlert className="text-orange- 80 ألف 0 flex-shrink-0" size={20} />
               <p className="text-xs text-emerald-100/60 leading-relaxed">
                 تنبيه: للاستعمال الخارجي فقط. هذا المنتج ليس دواءً طبياً. في حال وجود حساسية، يُنصح بتجربة كمية صغيرة أولاً.
               </p>
             </div>
-            <p className="text-emerald-100/40 text-sm">
+            <p className="text-emerald-100/ 80 ألف  text-sm">
               &copy; {new Date().getFullYear()} MAMA Astuce. جميع الحقوق محفوظة.
             </p>
           </div>
@@ -177,7 +177,7 @@ const App: React.FC = () => {
       </footer>
 
       {/* Sticky Bottom Bar for Mobile */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 border-t border-emerald-100 z-40 flex gap-4">
+      <div className="md:hidden fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm p-4 border-t border-emerald-100 z- 80 ألف  flex gap-4">
         <a href="#order" className="flex-1 bg-emerald-600 text-white text-center py-3 rounded-xl font-bold shadow-lg">
           اطلب الآن
         </a>
