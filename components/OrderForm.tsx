@@ -1,7 +1,7 @@
 import React from 'react';
 import { Send, CheckCircle, MapPin, Phone, User, Package } from 'lucide-react';
 
-const productSizes = ['50g', '1g'];
+const productSizes = ['50g', ' 100g'];
 
 const algerianWilayas = [
   "01 - أدرار", "02 - الشلف", "03 - الأغواط", "04 - أم البواقي", "05 - باتنة", 
