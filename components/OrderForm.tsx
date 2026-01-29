@@ -51,7 +51,7 @@ const OrderForm: React.FC = () => {
 
       // 2. إرسال رسالة WhatsApp
       const message = `طلب جديد لمنتج MAMA Astuce:\n👤 الاسم: ${formData.fullName}\n📞 الهاتف: ${formData.phone}\n📍 الولاية: ${formData.state}\n🏠 العنوان: ${formData.address}\n📦 الحجم: ${formData.productSize}`;
-      const phoneNumber = "213772136223"; 
+      const phoneNumber = "213659272799"; 
       
       window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
 
