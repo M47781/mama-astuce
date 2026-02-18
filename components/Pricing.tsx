@@ -6,7 +6,7 @@ const Pricing: React.FC = () => {
   const plans = [
     {
       size: "50g",
-      price: " 80 ألف   دج",
+      price: " 90 ألف   دج",
       tag: "الأكثر طلباً",
       popular: true,
       features: ["مناسب للحروق البسيطة", "حجم مثالي للجيب", "توصيل سريع", "دفع عند الاستلام"]
@@ -66,7 +66,7 @@ const Pricing: React.FC = () => {
             </div>
           </div>
           <div className="bg-emerald-800/50 p-6 rounded-2xl flex items-center gap-4 text-white">
-            <CreditCard className="text-emerald- 80 ألف 0 w-10 h-10" />
+            <CreditCard className="text-emerald- 90 ألف  w-10 h-10" />
             <div className="text-right">
               <p className="font-bold">دفع عند الاستلام</p>
               <p className="text-emerald-200 text-sm">ادفع فقط عند استلام منتجك</p>
