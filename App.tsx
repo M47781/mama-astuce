@@ -12,19 +12,19 @@ import { Instagram, Facebook, Mail, ShieldAlert, ChevronLeft, ChevronRight, X } 
 const App: React.FC = () => {
   const images = [
     {
-      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1769438381/photo_6032996507948093056_y_uevzdl.jpg",
+      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1771497975/photo_6032996507948093057_y_1_p3xbb2.jpg",
       alt: "صورة المنتج 1 - منظر أمامي",
     },
     {
-      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1769438373/photo_6032996507948093058_y_nsi9mk.jpg",
+      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1771497975/photo_6032996507948093058_y_rex9ee.jpg",
       alt: "صورة المنتج 2 - منظر جانبي",
     },
     {
-      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1769438369/photo_6032996507948093057_y_hbv0tn.jpg",
+      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1771497975/WhatsApp_Image_2026-02-18_at_6.25.22_PM_biisjf.jpg",
       alt: "صورة المنتج 3 - التغليف",
     },
     {
-      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1769438353/photo_6032996507948093059_y_dcqnp8.jpg",
+      url: "https://res.cloudinary.com/dv664dogt/image/upload/v1771497879/WhatsApp_Image_2026-02-18_at_6.25.22_PM_1_ajflzu.jpg",
       alt: "صورة المنتج 4 - تفاصيل المنتج",
     },
   ];
